@@ -3,8 +3,18 @@ package com.example.dam2_pmm_ut2_actividad3_aitorcoscollano.data;
 public class Frases {
 
     private int id;
-    private String autor;
     private String frase;
+    private String autor;
+
+    public Frases(String frase, String autor){
+        this.frase = frase;
+        this.autor = autor;
+    }
+    public Frases(int id, String frase, String autor){
+        this.id = id;
+        this.frase = frase;
+        this.autor = autor;
+    }
 
     public int getId() {
         return id;

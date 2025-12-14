@@ -10,7 +10,10 @@ public class FrasesDBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NOMBRE = "frases.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_TABLA = "t_frases";
+    public static final String DATABASE_TABLA = "t_frases";
+    public static final String COL_ID = "id";
+    public static final String COL_FRASE = "texto";
+    public static final String COL_AUTOR = "autor";
 
     public FrasesDBHelper(@Nullable Context context){
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
@@ -18,10 +21,10 @@ public class FrasesDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        String creatorQuery = "CREATE TABLE " + DATABASE_TABLA + "(" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "autor TEXT NOT NULL," +
-                "frase TEXT NOT NULL)";
+        String creatorQuery = "CREATE TABLE " + DATABASE_TABLA + " (" +
+                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_FRASE + " TEXT, " +
+                COL_AUTOR + " TEXT)";
         db.execSQL(creatorQuery);
     }
 
